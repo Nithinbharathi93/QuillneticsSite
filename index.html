@@ -42,6 +42,32 @@
 	<link rel="stylesheet" href="assets/css/style.css" />
 
 	<script src="assets/js/modernizr.min.js"></script>
+	<script>
+		function submitForm() {
+		  var formData = new FormData(document.getElementById('form'));
+		  loader.style.display = "block";
+		  fetch('https://script.google.com/macros/s/AKfycbxpDrAEtGVlZ9HElailm8zP4hqHck-VI4HIplA3IMahaByTalYwnblB-Do990ZBKo_ANQ/exec', {
+			method: 'POST',
+			body: formData
+		  })
+		  
+		  .then(response => response.json())
+		  .then(data => {
+			if (data.result === 'success') {
+				loader.style.display = "none";
+			  alert("Form submitted successfully!");
+			  window.location.href = data.redirect; // Redirect to index.html
+			} else {
+				loader.style.display = "none";
+			  alert("Error submitting form: " + data.error);
+			}
+		  })
+		  .catch(error => {
+			  loader.style.display = "none";
+			alert("Request failed: " + error);
+		  });
+		}
+	  </script>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navigation-area">
@@ -158,7 +184,7 @@
 							<h2 class="title-main">
 								01 <span>Services</span>
 							</h2><!-- /.title-main -->
-							<p class="sub-title">We work with you, Not for you</p>
+							<p class="sub-title">Our Services, Your Success!</p>
 						</div><!-- /.section-title -->
 					</div><!-- /.col-lg-8 -->
 				</div><!-- /.row -->
@@ -278,7 +304,7 @@
 						</div><!-- /.col-lg-6 -->
 						<div class="col-md-10 col-lg-6">
 							<div class="about-content">
-								<h3 style="color: #fff;" class="heading">At Techsnapie Solution Enterprises,</h3>
+								<h3 style="color: #fff;" class="heading">At Quillnetics,</h3>
 								<p> we specialize in crafting innovative and 
 									customized digital solutions to help businesses thrive in the online world. 
 									Our team of skilled developers, creative designers, and strategic marketers is 
@@ -333,7 +359,7 @@
 							<h2 class="title-main">
 								03 <span>Testimonial</span>
 							</h2><!-- /.title-main -->
-							<p class="sub-title">We work with you, Not for you</p>
+							<p class="sub-title">Your Voice, Our Pride - See What People Say!</p>
 						</div><!-- /.section-title -->
 					</div><!-- /.col-lg-8 -->
 				</div><!-- /.row -->
@@ -400,7 +426,7 @@
 							<h2 class="title-main">
 								04 <span style="color: #fff;">Acheivement</span>
 							</h2><!-- /.title-main -->
-							<p style="color: #fff;" class="sub-title">We work with you, Not for you</p>
+							<p style="color: #fff;" class="sub-title">Together, We Achieve More - Celebrating Success!</p>
 						</div><!-- /.section-title -->
 					</div><!-- /.col-lg-8 -->
 				</div><!-- /.row -->
@@ -481,7 +507,7 @@
 							<h2 class="title-main">
 								05 <span>Portfolio</span>
 							</h2><!-- /.title-main -->
-							<p class="sub-title">We work with you, Not for you</p>
+							<p class="sub-title">Collaborating for Excellence - Check Out Our Work!</p>
 						</div><!-- /.section-title -->
 					</div><!-- /.col-lg-8 -->
 				</div><!-- /.row -->
@@ -495,13 +521,7 @@
 								<a href="#" data-filter="*" class="filter active">All</a>
 							</li>
 							<li>
-								<a href="#" data-filter=".print" class="filter">Print</a>
-							</li>
-							<li>
 								<a href="#" data-filter=".web" class="filter">Web design</a>
-							</li>
-							<li>
-								<a href="#" data-filter=".mockups" class="filter">Mockups</a>
 							</li>
 							<li>
 								<a href="#" data-filter=".application" class="filter">Applications</a>
@@ -514,21 +534,6 @@
 						<a class="portfolio-item" href="#">
 							<figure class="portfolio-thumb">
 								<img src="assets/images/portfolio/1.png" alt="portfolio Item">
-							</figure><!-- /.portfolio-thumb -->
-							<div class="overlay-wrapper">
-								<div class="overlay"></div><!-- /.overlay -->
-								<div class="portfolio-info">
-									<p class="cat">Branding</p>
-									<h3 class="heading">Creative Design</h3>
-								</div><!-- /.portfolio-info -->
-							</div><!-- /.overlay-wrapper -->
-						</a><!-- /.portfolio-item -->
-					</div><!-- /.col-xl-3 -->
-
-					<div class="item col-lg-4 col-xl-3 col-md-6 print mockups">
-						<a class="portfolio-item" href="#">
-							<figure class="portfolio-thumb">
-								<img src="assets/images/portfolio/2.png" alt="portfolio Item">
 							</figure><!-- /.portfolio-thumb -->
 							<div class="overlay-wrapper">
 								<div class="overlay"></div><!-- /.overlay -->
@@ -555,36 +560,6 @@
 						</a><!-- /.portfolio-item -->
 					</div><!-- /.col-xl-3 -->
 
-					<div class="item col-lg-4 col-xl-3 col-md-6 mockups">
-						<a class="portfolio-item" href="#">
-							<figure class="portfolio-thumb">
-								<img src="assets/images/portfolio/4.png" alt="portfolio Item">
-							</figure><!-- /.portfolio-thumb -->
-							<div class="overlay-wrapper">
-								<div class="overlay"></div><!-- /.overlay -->
-								<div class="portfolio-info">
-									<p class="cat">Branding</p>
-									<h3 class="heading">Creative Design</h3>
-								</div><!-- /.portfolio-info -->
-							</div><!-- /.overlay-wrapper -->
-						</a><!-- /.portfolio-item -->
-					</div><!-- /.col-xl-3 -->
-
-					<div class="item col-lg-4 col-xl-3 col-md-6 print web">
-						<a class="portfolio-item" href="#">
-							<figure class="portfolio-thumb">
-								<img src="assets/images/portfolio/5.png" alt="portfolio Item">
-							</figure><!-- /.portfolio-thumb -->
-							<div class="overlay-wrapper">
-								<div class="overlay"></div><!-- /.overlay -->
-								<div class="portfolio-info">
-									<p class="cat">Branding</p>
-									<h3 class="heading">Creative Design</h3>
-								</div><!-- /.portfolio-info -->
-							</div><!-- /.overlay-wrapper -->
-						</a><!-- /.portfolio-item -->
-					</div><!-- /.col-xl-3 -->
-
 					<div class="item col-lg-4 col-xl-3 col-md-6 application">
 						<a class="portfolio-item" href="#">
 							<figure class="portfolio-thumb">
@@ -600,55 +575,10 @@
 						</a><!-- /.portfolio-item -->
 					</div><!-- /.col-xl-3 -->
 
-					<div class="item col-lg-4 col-xl-3 col-md-6 mockups">
-						<a class="portfolio-item" href="#">
-							<figure class="portfolio-thumb">
-								<img src="assets/images/portfolio/7.png" alt="portfolio Item">
-							</figure><!-- /.portfolio-thumb -->
-							<div class="overlay-wrapper">
-								<div class="overlay"></div><!-- /.overlay -->
-								<div class="portfolio-info">
-									<p class="cat">Branding</p>
-									<h3 class="heading">Creative Design</h3>
-								</div><!-- /.portfolio-info -->
-							</div><!-- /.overlay-wrapper -->
-						</a><!-- /.portfolio-item -->
-					</div><!-- /.col-xl-3 -->
-
-					<div class="item col-lg-4 col-xl-3 col-md-6 print">
-						<a class="portfolio-item" href="#">
-							<figure class="portfolio-thumb">
-								<img src="assets/images/portfolio/8.png" alt="portfolio Item">
-							</figure><!-- /.portfolio-thumb -->
-							<div class="overlay-wrapper">
-								<div class="overlay"></div><!-- /.overlay -->
-								<div class="portfolio-info">
-									<p class="cat">Branding</p>
-									<h3 class="heading">Creative Design</h3>
-								</div><!-- /.portfolio-info -->
-							</div><!-- /.overlay-wrapper -->
-						</a><!-- /.portfolio-item -->
-					</div><!-- /.col-xl-3 -->
-
 					<div class="item col-lg-4 col-xl-3 col-md-6 application">
 						<a class="portfolio-item" href="#">
 							<figure class="portfolio-thumb">
 								<img src="assets/images/portfolio/9.png" alt="portfolio Item">
-							</figure><!-- /.portfolio-thumb -->
-							<div class="overlay-wrapper">
-								<div class="overlay"></div><!-- /.overlay -->
-								<div class="portfolio-info">
-									<p class="cat">Branding</p>
-									<h3 class="heading">Creative Design</h3>
-								</div><!-- /.portfolio-info -->
-							</div><!-- /.overlay-wrapper -->
-						</a><!-- /.portfolio-item -->
-					</div><!-- /.col-xl-3 -->
-
-					<div class="item col-lg-4 col-xl-3 col-md-6 print mockups">
-						<a class="portfolio-item" href="#">
-							<figure class="portfolio-thumb">
-								<img src="assets/images/portfolio/10.png" alt="portfolio Item">
 							</figure><!-- /.portfolio-thumb -->
 							<div class="overlay-wrapper">
 								<div class="overlay"></div><!-- /.overlay -->
@@ -747,34 +677,30 @@
 								<h2 class="title-main">
 									06 <span>Contact</span>
 								</h2><!-- /.title-main -->
-								<p class="sub-title">Don’t Hesitate To Contact With Us</p>
+								<p class="sub-title">Don't Hesitate To Contact With Us</p>
 							</div><!-- /.section-title -->
 							<div class="contact-form-area">
-								<form id="contact_form" class="contact-form" action="#">
-									<div class="row gx-4">
-										<div class="col-lg-6 col-md-6">
-											<div class="form-group">
-												<input id="name" name="name" type="text" class="form-control" placeholder="Your Name*">
-											</div>
+									<form method="post" onsubmit="event.preventDefault(); submitForm();" id="form" class="contact-form row gx-4">
+										<div class="col-lg-6 col-md-6 form-group">
+											<input id="name" name="name" type="text" class="form-control" placeholder="Your Name*" required>
 										</div>
-										<!--./ col-lg-6-->
-										<div class="col-lg-6 col-md-6">
-											<div class="form-group">
-												<input class="form-control" id="email" name="email" type="email" placeholder="Your Email*">
-											</div>
+										<div class="col-lg-6 col-md-6 form-group">
+											<input class="form-control" id="email" name="email" type="email" placeholder="Your Email*" required>
 										</div>
-										<!--./ col-lg-6 -->
+										<div class="col-12 form-group">
+											<input id="message" name="domain" class="form-control" placeholder="Your Domain*" required></input>
+										</div>
+										<div class="col-12 form-group">
+											<select name="designation" class="form-control" id="designation">
+												<option value="Not mentioned" hidden disabled selected>Your Designation*</option>
+												<option value="Student">Student</option>
+												<option value="Working Professiona;">Working Professional</option>
+											</select>
+										</div>
 										<div class="col-12">
-											<div class="form-group">
-												<textarea id="message" name="message" class="form-control" rows="4"
-													placeholder="Anything that we can help you?"></textarea>
-											</div>
-										</div><!-- /.col-12 -->
-										<div class="col-12">
-											<button type="submit" class="btn btn-primary">Send Me</button>
+											<button type="submit" class="btn btn-primary">Contact Us</button>
+											<div class="loader" id="loader"></div>
 										</div>
-										<!--./ col-lg-6 -->
-									</div><!-- /.row -->
 								</form><!-- /.contact-form -->
 							</div><!-- /.contact-form-area -->
 						</div>
@@ -819,28 +745,28 @@
 									</div>
 									<div class="smedia-list">
 										<div class="icon">
-											<a href="https://www.instagram.com/quillnetics?igsh=MWNzaW13MHByYnUyZw==">
-												<i class="fa-brands fa-instagram"></i>
+											<a href="https://www.instagram.com/quillnetics?igsh=MWNzaW13MHByYnUyZw==" target="_blank">
+												<img src="./assets/images/smedia/instagram.png" alt="">
 											</a>
 										</div>
 										<div class="icon">
-											<a href="https://www.linkedin.com/company/quillnetics/">
-												<i class="fa-brands fa-linkedin-in"></i>
+											<a href="https://www.linkedin.com/company/quillnetics/" target="_blank">
+												<img src="./assets/images/smedia/linkedin.png" alt="">
 											</a>
 										</div>
 										<div class="icon">
-											<a href="https://www.facebook.com/share/1A94UFZcYz/">
-												<i class="fa-brands fa-facebook"></i>
+											<a href="https://www.facebook.com/share/1A94UFZcYz/" target="_blank">
+												<img src="./assets/images/smedia/facebook.png" alt="">
 											</a>
 										</div>
 										<div class="icon">
-											<a href="https://youtube.com/@quillnetics?feature=shared">
-												<i class="fa-brands fa-youtube"></i>
+											<a href="https://youtube.com/@quillnetics?feature=shared" target="_blank">
+												<img src="./assets/images/smedia/youtube.png" alt="">
 											</a>
 										</div>
 										<div class="icon">
-											<a href="https://x.com/quillnetics?t=m9MAS4e52_BrJCc4liSZXg&s=09">
-												<i class="fa-brands fa-x-twitter"></i>
+											<a href="https://x.com/quillnetics?t=m9MAS4e52_BrJCc4liSZXg&s=09" target="_blank">
+												<img src="./assets/images/smedia/twitter.png" alt="">
 											</a>
 										</div>
 									</div>

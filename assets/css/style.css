@@ -8780,3 +8780,31 @@ a:hover, a:active {
 .smedia-list {
   display: flex;
 }
+
+.smedia-list .icon {
+  background-color: #2490b1;
+  transition: all 400ms ease-in-out;
+}
+.smedia-list .icon:hover {
+  background-color: #5acef1;
+  transition: all 400ms ease-in-out;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 85%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  display: none; /* Initially hidden */
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
