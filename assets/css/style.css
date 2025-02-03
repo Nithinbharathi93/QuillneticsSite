@@ -8757,6 +8757,13 @@ a:hover, a:active {
   font-size: 14px;
   margin-bottom: 8px;
 }
+
+.icon {
+  width: 45px;
+  height: 45px;
+  margin-left: 10px;
+}
+
 @media (min-width: 768px) {
   .single-contact-info .icon, .icon {
     margin-left: auto;
