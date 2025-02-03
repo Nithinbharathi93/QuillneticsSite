@@ -46,7 +46,7 @@
 		function submitForm() {
 		  var formData = new FormData(document.getElementById('form'));
 		  loader.style.display = "block";
-		  fetch('https://script.google.com/macros/s/AKfycbxpDrAEtGVlZ9HElailm8zP4hqHck-VI4HIplA3IMahaByTalYwnblB-Do990ZBKo_ANQ/exec', {
+		  fetch('https://script.google.com/macros/s/AKfycbyP8ok1bQxylmljt4adS123h8k5M2rX4ZOMwS51lN9Asq3DWRZVtt7jJqcyZsqb7VVjlg/exec', {
 			method: 'POST',
 			body: formData
 		  })
@@ -68,9 +68,73 @@
 		  });
 		}
 	  </script>
+	<script>
+		function submitFormpop() {
+		  var formData = new FormData(document.getElementById('form'));
+		  fetch('https://script.google.com/macros/s/AKfycbyP8ok1bQxylmljt4adS123h8k5M2rX4ZOMwS51lN9Asq3DWRZVtt7jJqcyZsqb7VVjlg/exec', {
+			method: 'POST',
+			body: formData
+		  })
+		  .then(response => response.json())
+		  .then(data => {
+			if (data.result === 'success') {
+			  alert("Form submitted successfully!");
+			  window.location.href = data.redirect; // Redirect to index.html
+			} else {
+			  alert("Error submitting form: " + data.error);
+			}
+		  })
+		  .catch(error => {
+			alert("Request failed: " + error);
+		  });
+		}
+	  </script>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navigation-area">
+
+	<div id="popupForm" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" style="padding: 20px;" onclick="closePopup()">&times;</span>
+            <h2>Contact Us</h2>
+            <form method="post" onsubmit="event.preventDefault(); submitFormpop();" id="form" class="contact-form row gx-4">
+				<div class="col-12 form-group">
+					<input id="name" name="name" type="text" class="form-control" placeholder="Your Name*" required>
+				</div>
+				<div class="col-12 form-group">
+					<input class="form-control" id="email" name="email" type="email" placeholder="Your Email*" required>
+				</div>
+				<div class="col-12 form-group">
+					<input id="domain" name="domain" class="form-control" placeholder="Your Domain*" required></input>
+				</div>
+				<div class="col-12 form-group">
+					<input id="lang" name="lang" class="form-control" placeholder="Prefered Language (optional)"></input>
+				</div>
+				<div class="col-12 form-group">
+					<select name="designation" class="form-control" id="designation">
+						<option value="Not mentioned" hidden disabled selected>Your Designation*</option>
+						<option value="Student">Student</option>
+						<option value="Working Professiona;">Working Professional</option>
+					</select>
+				</div>
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary">Contact Us</button>
+					<div class="loader" id="loader"></div>
+				</div>
+		</form>
+        </div>
+    </div>
+	<script>
+        window.onload = function () {
+            setTimeout(() => {
+                document.getElementById("popupForm").classList.add("show");
+            }, 500);
+        };
+        function closePopup() {
+            document.getElementById("popupForm").classList.remove("show");
+        } 
+    </script>
+
 	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Start Site Header
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
