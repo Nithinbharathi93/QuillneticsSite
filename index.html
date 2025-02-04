@@ -45,6 +45,7 @@
 	<script>
 		function submitForm() {
 		  var formData = new FormData(document.getElementById('form'));
+		  loader = document.getElementById("loader");
 		  loader.style.display = "block";
 		  fetch('https://script.google.com/macros/s/AKfycbyzk4fvCXcjgI7MbeFmdo6JdWGuWKkPaRlqAgKNnQ5tKZ6QS8y2E2x0PjL26gS_fjPhZQ/exec', {
 			method: 'POST',
@@ -67,8 +68,6 @@
 			alert("Request failed: " + error);
 		  });
 		}
-	  </script>
-	<script>
 		function submitFormpop() {
 		  var formData = new FormData(document.getElementById('form'));
 		  fetch('https://script.google.com/macros/s/AKfycbyzk4fvCXcjgI7MbeFmdo6JdWGuWKkPaRlqAgKNnQ5tKZ6QS8y2E2x0PjL26gS_fjPhZQ/exec', {
@@ -119,7 +118,7 @@
 				</div>
 				<div class="col-12">
 					<button type="submit" class="btn btn-primary">Contact Us</button>
-					<div class="loader" id="loader"></div>
+					<div class="loader" id="loader2"></div>
 				</div>
 		</form>
         </div>
@@ -428,7 +427,7 @@
 							<div class="testimonial-item">
 								<div class="client-area">
 									<div class="client-thumb">
-										<img src="assets/images/testimonail/boy.png" alt="Daniel Watson" />
+										<img src="assets/images/testimonail/cyber.png" alt="Daniel Watson" />
 									</div><!-- /.client-thumb -->
 									<div class="client-info">
 										<h4 class="client-name">Cybersecurity</h4>
@@ -443,7 +442,7 @@
 							<div class="testimonial-item">
 								<div class="client-area">
 									<div class="client-thumb">
-										<img src="assets/images/testimonail/girl.png" alt="Daniel Watson" />
+										<img src="assets/images/testimonail/ai.png" alt="Daniel Watson" />
 									</div><!-- /.client-thumb -->
 									<div class="client-info">
 										<h4 class="client-name">Artificial Intelligence</h4>
@@ -458,7 +457,7 @@
 							<div class="testimonial-item">
 								<div class="client-area">
 									<div class="client-thumb">
-										<img src="assets/images/testimonail/man.png" alt="Daniel Watson" />
+										<img src="assets/images/testimonail/fsd.png" alt="Daniel Watson" />
 									</div><!-- /.client-thumb -->
 									<div class="client-info">
 										<h4 class="client-name">Full Stack Development</h4>
@@ -609,7 +608,7 @@
 											</select>
 										</div>
 										<div class="col-12">
-											<button type="submit" class="btn btn-primary">Contact Us</button>
+											<button type="submit" class="btn btn-primary" style="margin-bottom: 10px;">Contact Us</button>
 											<div class="loader" id="loader"></div>
 										</div>
 								</form><!-- /.contact-form -->

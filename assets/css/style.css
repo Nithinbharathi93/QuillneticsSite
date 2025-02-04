@@ -8797,7 +8797,7 @@ a:hover, a:active {
   transition: all 400ms ease-in-out;
 }
 
-.loader {
+#loader {
   border: 8px solid #f3f3f3;
   border-radius: 50%;
   border-top: 8px solid #3498db;
