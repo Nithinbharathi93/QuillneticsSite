@@ -5175,6 +5175,9 @@ a:hover, a:active {
   transition: all 0.25s linear 0ms;
   height: 45px;
 }
+
+
+
 @media (min-width: 1200px) {
   .service-item .service-icon {
     width: 88px;
@@ -6039,6 +6042,7 @@ a:hover, a:active {
   margin: 0 auto 10px;
 }
 
+
 .ach-area {
   display: flex;
   flex-direction: column;
@@ -6064,6 +6068,21 @@ a:hover, a:active {
   border-radius: 50%;
   -o-object-fit: cover;
   object-fit: cover;
+}
+
+.client-thumb {
+  padding: 8px;
+  border-radius: 50%;
+  border: #007bb5 solid 3px;
+  transition: all 200ms ease-in-out;
+}
+
+.client-thumb:hover {
+  border: #4ab9ec solid 3px;
+  padding: 4px;
+  transition: all 200ms ease-in-out;
+  width: 120px;
+  height: 120px;
 }
 
 .ach-thumb img {
